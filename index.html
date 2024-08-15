@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Egocentric Human-Object Interaction Detection: A New Benchmark and Method</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -21,6 +21,7 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -39,6 +40,48 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+    <style>
+    .slider {
+      width: 100%;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      padding: 20px; /* 添加图片上下左右各 20px 的边距 */
+    }
+    .slider-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+    }
+    .slider-controls button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -50,36 +93,36 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
+<!--  <div class="navbar-menu">-->
+<!--    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">-->
+<!--      <a class="navbar-item" href="https://keunhong.com">-->
+<!--      <span class="icon">-->
+<!--          <i class="fas fa-home"></i>-->
+<!--      </span>-->
+<!--      </a>-->
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
+<!--      <div class="navbar-item has-dropdown is-hoverable">-->
+<!--        <a class="navbar-link">-->
+<!--          More Research-->
+<!--        </a>-->
+<!--        <div class="navbar-dropdown">-->
+<!--          <a class="navbar-item" href="https://hypernerf.github.io">-->
+<!--            HyperNeRF-->
+<!--          </a>-->
+<!--          <a class="navbar-item" href="https://nerfies.github.io">-->
+<!--            Nerfies-->
+<!--          </a>-->
+<!--          <a class="navbar-item" href="https://latentfusion.github.io">-->
+<!--            LatentFusion-->
+<!--          </a>-->
+<!--          <a class="navbar-item" href="https://photoshape.github.io">-->
+<!--            PhotoShape-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-  </div>
+<!--  </div>-->
 </nav>
 
 
@@ -88,8 +131,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
-          <div class="is-size-5 publication-authors">
+          <h1 class="title is-1 publication-title">Egocentric Human-Object Interaction Detection: A New Benchmark and Method</h1>
+          <!--<div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -114,13 +157,13 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>University of Washington,</span>
             <span class="author-block"><sup>2</sup>Google Research</span>
-          </div>
+          </div>-->
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -128,7 +171,7 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
+<!--              <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -136,9 +179,19 @@
                   </span>
                   <span>arXiv</span>
                 </a>
+              </span>-->
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+           <!--   <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,10 +199,10 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span>-->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -157,15 +210,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -175,7 +219,27 @@
   </div>
 </section>
 
-<section class="hero teaser">
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- images/f3/png -->
+        <!-- <div class="columns is-centered">
+            <div class="column is-8"> -->
+        <figure class="image">
+          <img src="./static/images/egoThirdComparev4.jpg" alt="MP-HOI teaser image" width="100%" />
+        </figure>
+        <!-- </div> -->
+      <h2 class="subtitle has-text-centered">
+        Comparision of human-object interactions from third-person perspective (top row) and egocentric perspective (bottom row).
+        Different colors represent distinct elements of each HOI triplet < human/hand, verb, object>
+      </h2>
+      </div>
+      <!-- </div> -->
+    </div>
+    </div>
+  </section>
+
+<!--<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -189,10 +253,86 @@
       </h2>
     </div>
   </div>
+</section>-->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Understanding the interaction between humans and objects has gained much attention in recent years. Existing human-object interaction (HOI) detection methods primarily focus on the third-person vision, ignoring a more intuitive manner from the egocentric view of HOI, namely Ego-HOI.
+            This paper introduces an Ego-HOIBench, a new benchmark dataset for Egocentric HOI Detection in a first-person view captured by head-mounted devices.
+            Our Ego-HOIBench comprises more than 27K egocentric images with explicit and high-quality annotations for Ego-HOI detection across 123 fine-grained interaction categories which contain a rich diversity of scenarios, object types, and hand configurations.
+            In the egocentric view, objects of interest often suffer from severe visual occlusion due to the alignment of the observer’s viewpoint with the hand motion trajectory, making it more challenging to understand intricate interactions. To this end, we exploit the inherent structural feature of the hand and propose a Hand Geometric and Interactivity Refinement (HGIR) scheme that leverages hand pose and geometric information as valuable cues for interpreting interactions.
+            Specifically, we extract global hand geometric features from the estimated pose proposals while refining interaction-specific appearance features using cross-hand pose visual cues. By aggregating the structural insights from geometric features and the rich context and surface details offered by visual features, we obtain a more robust and precise interaction representation, significantly improving the performance of Ego-HOI detection.
+            Our approach is simple, versatile, and effective, which can be easily applied to representative HOI baselines in a plug-and-play manner and achieve state-of-the-art results on the Ego-HOIBench.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!--&lt;!&ndash; Paper video. &ndash;&gt;
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    &lt;!&ndash;/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2">Ego-HOIBench</h2>
+    <div class="columns is-centered">
+      <figure class="image" style="width: 100%;">
+        <img src="./static/images/dataset_compare.png" alt="Statistics of Magic-HOI" />
+        <figcaption style="text-align: center;">Comparison of Ego-HOIBench with existing egocentric datasets. Active Object Distinction denotes that the annotation specifies the object involved in the current interaction. Hand Dist. means distinguishing between left and right hands. (*): Can be converted from masks or 6D object pose labels. (**): Only available for a subset of frames. </figcaption>
+      </figure>
+    </div>
+  </div>
 </section>
 
 
-<section class="hero is-light is-small">
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2">Method Overview</h2>
+    <div class="columns is-centered">
+      <figure class="image" style="width: 100%;">
+        <img src="./static/images/framework_v4.jpg" alt="Statistics of Magic-HOI" />
+        <figcaption style="text-align: center;">
+        <p>Overview of our framework. Given an input image, a baseline HOI detection method (at the bottom) generates the initial hand (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">H</span></span></span></span>), object (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">O</span></span></span></span>), and interaction (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">I</span></span></span></span>) features.
+          (a) Within our HGIR scheme (at the top), a set of pose candidates is first estimated based on <span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">H</span></span></span></span>.
+          (b) Top K hand proposals are then selected, and their geometric features (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">f</span></span></span></span>) are further extracted to reveal the dynamic structural properties of hands in interactions.
+          (c) Simultaneously, the cross-hand offset visual information is incorporated to enrich the interaction representations using the hand-interaction attention mechanism.
+          (d) Finally, the hand geometric features and refined interaction representations are aggregated to obtain enhanced interaction embedding (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">E</span></span></span></span>) for classification. Our scheme is dedicated to interactive learning and can be integrated with any baseline HOI method that provides interaction and hand features.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
+<script>
+  document.querySelectorAll(".katex").forEach(function(element) {
+    var formula = element.firstElementChild.firstElementChild.firstElementChild.textContent;
+    katex.render(formula, element, {
+      throwOnError: false,
+      displayMode: true
+    });
+  });
+</script>
+
+<!--<section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -247,69 +387,18 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
+    <!--<div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      &lt;!&ndash; Visual Effects. &ndash;&gt;
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
@@ -323,9 +412,9 @@
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+      &lt;!&ndash;/ Visual Effects. &ndash;&gt;
 
-      <!-- Matting. -->
+      &lt;!&ndash; Matting. &ndash;&gt;
       <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
@@ -343,142 +432,139 @@
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
+    &lt;!&ndash;/ Matting. &ndash;&gt;-->
 
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Qualitative results</h2>
+
+
+        <h3 class="title is-4">Baseline VS Our method</h3>
+        <div class="content has-text-justified">
+          <img src="./static/images/visresults_v4.jpg"
+           class="interpolation-image"
+           alt="Interpolate start reference image."/>
+          <p>
+            Qualitative comparison between the baseline and our proposed method.
+            For each image, the detection outputs of our proposed method are marked in <span style="color:lawngreen;">green</span>, while the baseline outputs are marked in <span style="color:red;">red</span>.
+            The predicted classes and scores are presented in the captions. If no correct Ego-HOI category is predicted, the score is marked as <strong>none</strong>.
+            For clarity, the hand category is omitted from the image captions.
+          </p>
+        </div>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <h3 class="title is-4">Ground Truth VS Our method</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            We also visualize the performance of our approach on a series of sequential actions.
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
+        <div class="slider">
+        <div class="slide active">
+          <img src="./static/images/vis1/000000.jpg" alt="Image 1">
         </div>
-        <br/>
-        <!--/ Interpolating. -->
+        <div class="slide">
+          <img src="./static/images/vis1/000001.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000002.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000003.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000004.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000005.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000006.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000007.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000008.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000009.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000010.jpg" alt="Image 3">
+        </div>
+        <div class="slide">
+          <img src="./static/images/vis1/000011.jpg" alt="Image 3">
+        </div>
+        <div class="slider-controls">
+          <button id="prev-btn" disabled>Previous</button>
+          <button id="next-btn">Next</button>
+        </div>
+      </div>
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
+      <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (n + slides.length) % slides.length;
+          slides[currentSlide].classList.add('active');
+
+          if (currentSlide === 0) {
+            prevBtn.disabled = true;
+          } else {
+            prevBtn.disabled = false;
+          }
+
+          if (currentSlide === slides.length - 1) {
+            nextBtn.disabled = true;
+          } else {
+            nextBtn.disabled = false;
+          }
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+      </script>
 
       </div>
+
     </div>
+
     <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
 
   </div>
 </section>
 
+<section>
+
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
+<!--    <pre><code>@article{park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
   journal   = {ICCV},
   year      = {2021},
-}</code></pre>
+}</code></pre>-->
   </div>
 </section>
 
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            This website is created with this
+            <a href="https://github.com/nerfies/nerfies.github.io">template</a>
           </p>
         </div>
       </div>
@@ -488,3 +574,5 @@
 
 </body>
 </html>
+
+
