@@ -257,38 +257,17 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <!-- images/f3/png -->
-        <!-- <div class="columns is-centered">
-            <div class="column is-8"> -->
         <figure class="image">
           <img src="./static/images/egoThirdComparev4.jpg" alt="MP-HOI teaser image" width="100%" />
         </figure>
-        <!-- </div> -->
-      <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered">
         Comparision of human-object interactions from third-person perspective (top row) and egocentric perspective (bottom row).
         Different colors represent distinct elements of each HOI triplet < human/hand, verb, object>
-      </h2>
+        </h2>
       </div>
-      <!-- </div> -->
     </div>
     </div>
   </section>
-
-<!--<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>-->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -296,34 +275,12 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Understanding the interaction between humans and objects has gained much attention in recent years.
-            Existing human-object interaction (HOI) detection methods mainly focus on the third-person perspectives, overlooking a more intuitive manner from the egocentric view of HOI, namely Ego-HOI.
-            This paper introduces an Ego-HOIBench, a new benchmark dataset for Egocentric HOI Detection in a first-person view captured by head-mounted devices.
-            Our Ego-HOIBench comprises more than 27K egocentric images with high-quality annotations for Ego-HOI detection across 123 fine-grained interaction categories which contain a rich diversity of scenarios, object types, and hand configurations in daily activities.
-            From the egocentric view, objects of interest frequently suffer from severe visual occlusion due to the narrowness of the observer’s view, making it more challenging to understand intricate interactions.
-            To this end, we exploit the inherent structural feature of the hand and propose a Hand Geometry and Interactivity Refinement (HGIR) scheme that leverages hand pose and geometric information as valuable cues for interpreting interactions.
-            Specifically, the HGIR scheme explicitly extracts global hand geometric features from the estimated hand pose proposals and refines the interaction-specific features using pose-prompt attention.
-            This enables the model to obtain a robust and precise interaction representation, significantly improving the Ego-HOI detection capability.
-            Our approach is simple, versatile, and effective, which can be easily applied to representative HOI baselines in a plug-and-play manner and achieve state-of-the-art results on the Ego-HOIBench.
-          </p>
-        </div>
+        <figure class="image">
+         <img src="./static/images/abstract.jpg" alt="MP-HOI teaser image" width="100%" />
+        </figure>
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!--&lt;!&ndash; Paper video. &ndash;&gt;
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    &lt;!&ndash;/ Paper video. -->
   </div>
 </section>
 
@@ -333,7 +290,6 @@
     <div class="columns is-centered">
       <figure class="image" style="width: 100%;">
         <img src="./static/images/dataset_compare.png" alt="Statistics of Magic-HOI" />
-        <figcaption style="text-align: center;">Comparison of Ego-HOIBench with existing egocentric datasets. Active Object Distinction denotes that the annotation specifies the object involved in the current interaction. Hand Dist. means distinguishing between left and right hands. (*): Can be converted from masks or 6D object pose labels. (**): Only available for a subset of frames. </figcaption>
       </figure>
     </div>
   </div>
@@ -346,13 +302,6 @@
     <div class="columns is-centered">
       <figure class="image" style="width: 100%;">
         <img src="./static/images/framework_v4.jpg" alt="Statistics of Magic-HOI" />
-        <figcaption style="text-align: center;">
-        <p>Overview of our framework. Given an input image, a baseline HOI detection method (at the bottom) generates the initial hand (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">H</span></span></span></span>), object (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">O</span></span></span></span>), and interaction (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">I</span></span></span></span>) features.
-          (a) Within our HGIR scheme (at the top), a set of pose candidates is first estimated based on <span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">H</span></span></span></span>.
-          (b) Top K hand proposals are then selected, and their geometric features (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">f</span></span></span></span>) are further extracted to reveal the dynamic structural properties of hands in interactions.
-          (c) imultaneously, the hand pose offset-specific prompts are incorporated to enrich the interaction representations using the hand-interaction attention mechanism.
-          (d) Finally, the hand geometric features and refined interaction representations are aggregated to obtain enhanced interaction embedding (<span class="katex"><span class="katex-math"><span class="katex-base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathbf">E</span></span></span></span>) for classification. Our scheme is dedicated to interactive learning and can be integrated with any baseline HOI method that provides interaction and hand features.</p>
-        </figcaption>
       </figure>
     </div>
   </div>
@@ -472,30 +421,26 @@
     </div>
     &lt;!&ndash;/ Matting. &ndash;&gt;-->
 
+
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Qualitative results</h2>
+        <h2 class="title is-2">Qualitative results</h2>
 
 
-        <h3 class="title is-4">Baseline VS Our method</h3>
+        <h3 class="title is-3">Baseline VS Our method</h3>
         <div class="content has-text-justified">
           <img src="./static/images/visresults_v4.jpg"
            class="interpolation-image"
            alt="Interpolate start reference image."/>
-          <p>
-            Qualitative comparison between the baseline and our proposed method.
-            For each image, the detection outputs of our proposed method are marked in <span style="color:lawngreen;">green</span>, while the baseline outputs are marked in <span style="color:red;">red</span>.
-            The predicted classes and scores are presented in the captions. If no true positive is predicted, the score is marked as <strong>none</strong>.
-            For clarity, the hand category is omitted from the image captions.
-          </p>
         </div>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Ground Truth VS Our method</h3>
+        <h3 class="title is-3">Ground Truth VS Our method</h3>
         <div class="content has-text-justified">
           <p>
-            We also visualize the performance of our approach on a series of sequential actions.
+            We visualize the performance of our method on a sequence of keyframes of sequential actions.
+            The ground truths are marked in <span style="color:lawngreen;font-weight:bold;">green</span>, and the predictions of our method are marked in <span style="color:hotpink;font-weight:bold;">red</span>.
           </p>
         </div>
 
@@ -687,9 +632,12 @@
 
         </script>
         <!-- Re-rendering. -->
+        <br>
+        <br>
         <div class="content has-text-justified">
           <p>
-            Here is the performance of our method on some video clips.
+            We also show the performance of our method on all frames of each video clip. Although our method is image-based and does not consider temporal information, it still performs well on consecutive frames.
+            The ground truths are marked in <span style="color:lawngreen;font-weight:bold;">green</span>, and the predictions of our method are marked in <span style="color:hotpink;font-weight:bold;">red</span>. Here, we only display the interaction category labels.
           </p>
         </div>
         <div class="content has-text-centered">
